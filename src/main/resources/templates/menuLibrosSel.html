@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Magellano - NFT Marketplace Website Template by Ansonika">
+    <meta name="author" content="Ansonika">
+    <title>Magellano - NFT Marketplace Website Template</title>
+
+    <!-- FAVICONS-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- SPECIFIC CSS -->
+    <link href="css/detail-page.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+	
+	<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Page Preload -->
+				
+	<header class="header_in clearfix element_to_stick">
+	    <div class="layer"></div><!-- Opacity Mask Menu Mobile -->
+	    <div class="container">
+	       <div class="logo">
+	            <a href="index.html">
+	                <img src="img/unam.png" alt="" width="50" height="50" class="dark">
+	                   <img src="img/unam2.webp" alt="" width="50" height="50" class="light">
+	            </a>
+	        </div>
+	        <ul class="top_menu drop_user">
+			
+			</ul>
+			<!-- /top_menu -->
+	        <a href="#0" class="open_close">
+	            <i class="bi bi-list"></i><span>Menu</span>
+	        </a>
+	        <nav class="main-menu">
+	            <div id="header_menu">
+	                <a href="#0" class="open_close">
+	                    <i class="bi bi-x"></i>
+	                </a>
+	                <a href="index.html" class="logo_menu">
+	                	<img src="img/logo-placeholder.png" data-src="img/logo.svg" alt="" width="120" height="30" class="dark lazy">
+	                	<img src="img/logo-placeholder.png" data-src="img/logo-light-mode.svg" alt="" width="120" height="30" class="light lazy">
+	                </a>
+	            </div>
+	            <ul>
+	                <li class="submenu">
+	                    <a href="#0" class="show-submenu">Home</a>
+	                    <ul>
+	                        <li><a href="index.html">Default</a></li>
+	                        <li><a href="index-2.html">Experimental Particles</a></li>
+	                        <li><a href="index-10.html">Particles</a></li>
+	                        <li><a href="index-3.html">Video Background</a></li>
+	                        <li><a href="index-4.html">Vertical Slider</a></li>
+	                        <li><a href="index-5.html">Slider</a></li>
+	                        <li><a href="index-6.html">Hero Categories</a></li>
+	                        <li><a href="index-11.html">Hero Vesion 2</a></li>
+	                        <li><a href="index-7.html">GDPR Cookie Bar EU Law</a></li>
+	                        <li><a href="index-8.html">Modal Advertise</a></li>
+	                        <li><a href="index-9.html">Modal Newsletter</a></li>
+	                    </ul>
+	                </li>
+	                <li class="submenu">
+	                    <a href="#0" class="show-submenu">Carrito</a>
+	                    <ul>
+	                        <li><a th:href="@{/getCart}">Mi Carrito</a></li>	                
+	                    </ul>
+	                </li>
+	                <li class="submenu">
+	                    <a href="#0" class="show-submenu">Pages</a>
+	                    <ul>
+	                        <li><a href="404.html">404 Error</a></li>
+	                        <li><a href="help.html">Help and Faq</a></li>
+	                        <li class="third-level"><a href="#0">Pricing Tables</a>
+	                            <ul>
+	                                <li><a href="pricing-tables-1.html">Version 1</a></li>
+	                                <li><a href="pricing-tables-2.html">Version 2</a></li>
+	                                <li><a href="pricing-tables-3.html">Version 3</a></li>
+	                            </ul>
+	                        </li>
+	                        <li><a href="become-author.html">Become an Author</a></li>
+	                        <li><a href="author-edit-profile.html">Edit profile</a></li>
+	                        <li><a href="upload-artwork.html">Upload Artwork</a></li>
+	                        <li><a href="account-settings.html">Account Settings</a></li>
+	                        <li><a href="blog.html">Blog</a></li>
+	                        <li><a href="blog-no-sidebar.html">Blog no sidebar</a></li>
+	                        <li><a href="contacts.html">Contacts</a></li>
+	                        <li><a href="login.html">Login</a></li>
+	                        <li><a href="register.html">Register</a></li>
+	                    </ul>
+	                </li>
+	              
+	            </ul>
+	        </nav>
+	    </div>
+	</header>
+	<!-- /header -->
+	
+	<main>
+	 <div class="container page_header ">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="menuLibros">Busqueda de libros</a></li>
+                        <li>Detalle del libro</li>
+                    </ul>
+                </div>
+                
+            </div>
+	
+	    <div class="container margin_60_40">
+	   
+	        <div class="row">
+	            <div class="col-xl-7 col-lg-7 text-center">
+	            	   	<figure><img th:src="@{${'/img/' +tbl_proveedor.nombre_imagen}}" alt=""  width="200" height="200" class="img-fluid rounded"></figure>
+	            </div>
+	            <!-- /col -->
+
+	            <div class="col-xl-5 col-lg-5">
+	            <form th:action="@{/cart}" method="POST">
+	            <input type="hidden" th:value="${tbl_proveedor.id_proveedor}" name="id_proveedor">
+	            	<div class="detail_col">
+	                        
+	                <h1 class="mb-md-2" th:text="${tbl_proveedor.titulo}"></h1>
+	                <p th:text="@{${'Autor:' +tbl_proveedor.autor}}"></p>
+	                <p th:text="@{${'Editorial:' +tbl_proveedor.editorial}}"></p>
+	                <p th:text="@{${'Año:' +tbl_proveedor.anio}}"></p> 
+	                <p><a th:href="@{${tbl_proveedor.url}}" target="_blank"> mas información</a></p>
+
+	                 <p class="item_price clearfix"><span><strong>Price $0.059 </strong> </span>
+	                  <!--<a href="#modal-dialog" class="btn_1 modal_popup" id="idSolicitud">Solicitud de Compra</a> </p>-->
+	                  <button type="submit" class="btn_1">Añadir al carrito </button>
+	               
+	            </div>
+	           </form>
+	            </div>
+	      
+
+	        </div>
+	        <!-- /row -->
+	    </div>
+	    <!-- /container -->
+	</main>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+		<footer>
+		<div class="container">
+			<div class="row">
+				
+				 <div class="container">
+    <span class="text-muted">Hecho en M&eacute;xico. Universidad Nacional Aut&oacute;noma de M&eacute;xico (UNAM), todos los derechos reservados 2010-2022. Esta p&aacute;gina puede ser reproducida con fines no lucrativos.</span>
+  </div>
+			
+				
+			</div>
+			<!-- /row-->
+			<hr>
+			
+		</div>
+	</footer>
+	<!--/footer-->
+
+	<div id="toTop"></div><!-- Back to top button -->
+
+	<!-- Modal Bid -->
+	<div id="modal-dialog" class="zoom-anim-dialog mfp-hide">
+		<div class="modal_header">
+			<h3>Acceso</h3>
+		</div>
+		<form>
+			<div class="sign-in-wrapper">
+				<!--<p>You are about to purchase <strong>"Amazing Art" #304</strong> from <strong>George Lucas</strong></p>-->
+				<div class="form-group">
+					<label>Usuario</label>
+					<input type="text" class="form-control" id="idUsarname">
+				</div>
+				
+				<div id="idMensaje"></div>
+			
+				<div class="text-center">
+					<input type="botton" value="Login" id="idbottonLogin" class="btn_1 full-width mb-2">
+				</div>
+			<div id="idMensaje"></div>
+		</form>
+		<!--form -->
+	</div>
+	
+	
+	
+	
+	<!-- Modal Bid -->
+	
+	<!-- COMMON SCRIPTS -->
+    <script src="js/common_scripts.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/common_func.js"></script>
+    <script>
+    
+    function cleanModal(){
+
+	$("#idUsarname").val('');
+	$("#idMensaje").html('');
+	$("#idbottonLogin").show('');
+	
+	
+    }
+    
+    function actualizaPass(){
+	
+	  $.ajax({
+        url : '/updatePass',
+        type :'POST',
+        data : {username: $('#idUsarname').val(),pass:$('#idPassConfir').val()},
+        cache: false,
+        timeout: 600000,
+        success : function(data) {               
+        
+      
+			
+			     
+			   console.log(data.respuesta);
+           
+             if(data.respuesta==1){
+	
+	          mensaje='<div class="alert alert-success" role="alert">'+
+  					         'Contraseña actualizada con éxito'+
+					       '</div>';
+	 $('#idMensaje').html(mensaje);
+	            
+             }
+				
+          
+            
+		
+            
+        },
+        error : function(request,error) {
+            alert("Error : " + JSON.stringify(request));
+        }
+    });
+	
+	
+   }
+   
+   function entrarSistema(){
+	$.ajax({
+        url : '/entrarSistema',
+        type :'POST',
+        data : {username: $('#idUsarname').val()},
+        cache: false,
+        timeout: 600000,
+        success : function(data) {               
+        
+      
+			
+			     
+			   console.log(data.respuesta);
+			   
+			   if(data.respuesta!=null){
+				 mensaje='<div class="alert alert-success" role="alert">'+
+  					         'Usuario accedió exitosamente!'+
+					       '</div>'+
+					        '<br><div class="text-center">'+
+					//' <button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+				    '</div>';
+	         
+	         
+	         $('#idMensaje').html(mensaje);
+				
+			}
+        
+				
+          
+            
+		
+            
+        },
+        error : function(request,error) {
+            alert("Error : " + JSON.stringify(request));
+        }
+    });
+	
+	
+}
+    
+    function validaUser(){
+	  var mensaje='';
+	if($('#idUsarname').val()==''){
+		
+		  mensaje='<div class="alert alert-danger" role="alert">'+
+  					         'Favor de colocar un usuario.'+
+					       '</div>';
+		  $('#idMensaje').html(mensaje);
+		  return;
+	}
+	
+	 $.ajax({
+        url : '/validUer',
+        type :'POST',
+        data : {identificador: $('#idUsarname').val()},
+        cache: false,
+        timeout: 600000,
+        success : function(data) {               
+        
+      
+			
+			     
+			   console.log(data.respuesta);
+            if(data.respuesta==null){
+	               mensaje='<div class="alert alert-danger" role="alert">'+
+  					         'El usuario no existe, favor de comunicarse con los Administradores.'+
+					       '</div>';
+	         
+	         
+	         $('#idMensaje').html(mensaje);
+	    
+             }else{
+	
+	            if(data.respuesta.password == null){
+					
+					  mensaje='<div class="form-group">'+
+					'<label>Favor de crear su nueva Contraseña </label>'+
+					'<input type="password" class="form-control">'+
+					'<label>Confirmación de Contraseña </label>'+
+					'<input type="password" id="idPassConfir" class="form-control">'+
+				    '</div>'+
+				    '<div class="text-center">'+
+					'<input type="botton" value="Guardar Contraseña" id="idbottonAccess" class="btn_1 full-width mb-2">'+
+				    '</div>';
+				    
+				    
+				  
+				    
+				    
+				      $('#idMensaje').html(mensaje);
+				      $("#idbottonLogin").hide();
+				        $( '#idbottonAccess' ).on( 'click',  function() {actualizaPass()});
+				             }else{
+					
+					  mensaje='<div class="form-group">'+
+					'<label>Contraseña </label>'+
+					'<input type="password" class="form-control">'+
+					
+				    '<br><div class="text-center">'+
+					'<input type="botton" value="Acceso" id="idbottonEntrar" class="btn_1 full-width mb-2">'+
+				    '</div>';
+				
+				     $('#idMensaje').html(mensaje);
+				      $("#idbottonLogin").hide();
+				$( '#idbottonEntrar' ).on( 'click',  function() {entrarSistema()});
+				   }
+             }
+             
+				
+          
+            
+		
+            
+        },
+        error : function(request,error) {
+            alert("Error : " + JSON.stringify(request));
+        }
+    });
+	
+    }
+    
+   (function ($) {
+    
+		
+			$( '#idbottonLogin' ).on( 'click',  function() {validaUser()});
+			$( '#idSolicitud' ).on( 'click',  function() {cleanModal()});
+		
+
+		
+	})(window.jQuery); 
+    </script>
+
+</body>
+</html>

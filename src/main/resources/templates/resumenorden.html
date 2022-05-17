@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Magellano - NFT Marketplace Website Template by Ansonika">
+    <meta name="author" content="Ansonika">
+    <title>Magellano - NFT Marketplace Website Template</title>
+
+    <!-- FAVICONS-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- SPECIFIC CSS -->
+    <link href="/css/detail-page.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="/css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="header_in clearfix element_to_stick">
+	    <div class="layer"></div><!-- Opacity Mask Menu Mobile -->
+	    <div class="container">
+	       <div class="logo">
+	            <a href="index.html">
+	                <img src="/img/unam.png" alt="" width="50" height="50" class="dark">
+	                   <img src="/img/unam2.webp" alt="" width="50" height="50" class="light">
+	            </a>
+	        </div>
+	        <ul class="top_menu drop_user">
+			
+			</ul>
+			<!-- /top_menu -->
+	        <a href="#0" class="open_close">
+	            <i class="bi bi-list"></i><span>Menu</span>
+	        </a>
+	        <nav class="main-menu">
+	            <div id="header_menu">
+	                <a href="#0" class="open_close">
+	                    <i class="bi bi-x"></i>
+	                </a>
+	                <a href="index.html" class="logo_menu">
+	                	<img src="img/logo-placeholder.png" data-src="img/logo.svg" alt="" width="120" height="30" class="dark lazy">
+	                	<img src="img/logo-placeholder.png" data-src="img/logo-light-mode.svg" alt="" width="120" height="30" class="light lazy">
+	                </a>
+	            </div>
+	            <ul>
+	                <li class="submenu">
+	                    <a href="#0" class="show-submenu">Home</a>
+	                    <ul>
+	                        <li><a href="index.html">Default</a></li>
+	                        <li><a href="index-2.html">Experimental Particles</a></li>
+	                        <li><a href="index-10.html">Particles</a></li>
+	                        <li><a href="index-3.html">Video Background</a></li>
+	                        <li><a href="index-4.html">Vertical Slider</a></li>
+	                        <li><a href="index-5.html">Slider</a></li>
+	                        <li><a href="index-6.html">Hero Categories</a></li>
+	                        <li><a href="index-11.html">Hero Vesion 2</a></li>
+	                        <li><a href="index-7.html">GDPR Cookie Bar EU Law</a></li>
+	                        <li><a href="index-8.html">Modal Advertise</a></li>
+	                        <li><a href="index-9.html">Modal Newsletter</a></li>
+	                    </ul>
+	                </li>
+	                <li class="submenu">
+	                    <a href="#0" class="show-submenu">Explore</a>
+	                    <ul>
+	                        <li><a href="grid-listing-1.html">Grid Listing Default</a></li>
+	                        <li><a href="grid-listing-2.html">Grid Listing Isotope Sort</a></li>
+	                        <li><a href="grid-listing-3.html">Grid Listing Filters Left</a></li>
+	                        <li><a href="detail-page.html">Detail page 1</a></li>
+	                        <li><a href="detail-page-2.html">Detail page 2</a></li>
+	                        <li><a href="author.html">Author page</a></li>
+	                    </ul>
+	                </li>
+	                <li class="submenu">
+	                    <a href="#0" class="show-submenu">Pages</a>
+	                    <ul>
+	                        <li><a href="404.html">404 Error</a></li>
+	                        <li><a href="help.html">Help and Faq</a></li>
+	                        <li class="third-level"><a href="#0">Pricing Tables</a>
+	                            <ul>
+	                                <li><a href="pricing-tables-1.html">Version 1</a></li>
+	                                <li><a href="pricing-tables-2.html">Version 2</a></li>
+	                                <li><a href="pricing-tables-3.html">Version 3</a></li>
+	                            </ul>
+	                        </li>
+	                        <li><a href="become-author.html">Become an Author</a></li>
+	                        <li><a href="author-edit-profile.html">Edit profile</a></li>
+	                        <li><a href="upload-artwork.html">Upload Artwork</a></li>
+	                        <li><a href="account-settings.html">Account Settings</a></li>
+	                        <li><a href="blog.html">Blog</a></li>
+	                        <li><a href="blog-no-sidebar.html">Blog no sidebar</a></li>
+	                        <li><a href="contacts.html">Contacts</a></li>
+	                        <li><a href="login.html">Login</a></li>
+	                        <li><a href="register.html">Register</a></li>
+	                    </ul>
+	                </li>
+	              
+	            </ul>
+	        </nav>
+	    </div>
+	</header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">
+       <small>Resumen de la orden</small>
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+        <li class="breadcrumb-item"><a th:href="@{/getCart}">Carrito</a></li>
+        <li class="breadcrumb-item active">Orden</li>
+      </ol>
+
+      <!-- Blog Post -->
+      <div class="mb-4">
+        <div class="card-body">
+          <div class="row">
+           <div class="col-lg-9">
+             <div class="">
+              <h5 class="card-title">
+                DATOS ORDEN
+              </h5>
+              <h6 th:text=" 'Nombre: ' + ${usuario.nombre}"> </h6>
+              <h6 th:text=" 'Correo: ' + ${usuario.correo}"> </h6>
+              <h6 th:text=" 'Direccion: ' + ${usuario.direccion}"></h6>
+
+              <h5 class="card-title">
+                LIBROS
+              </h5>
+              <div class="alert alert-light" role="alert">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Libro</th>
+                      <th scope="col">Precio</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr th:each="dtorden:${cart}">
+                     <td th:text="${dtorden.nombre}"></td>
+                     <td th:text="${dtorden.precio}"></td>
+
+                   </tr>
+                 </tbody>
+               </table>
+             </div>
+
+           </div>
+         </div>
+
+
+         <div class="col-lg-3">
+          <h2 class="card-title">Resumen Orden</h2>
+
+          <ul class="list-group">
+            <li class=""><h5 th:text=" 'Total: ' + ${orden.total} "> </h5></li>
+            <a th:href="@{/saveOrder}" class="btn_1">Generar Orden de Compra</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer>
+		<div class="container">
+			<div class="row">
+				
+				 <div class="container">
+    <span class="text-muted">Hecho en M&eacute;xico. Universidad Nacional Aut&oacute;noma de M&eacute;xico (UNAM), todos los derechos reservados 2010-2022. Esta p&aacute;gina puede ser reproducida con fines no lucrativos.</span>
+  </div>
+			
+				
+			</div>
+			<!-- /row-->
+			<hr>
+			
+		</div>
+	</footer>
+
+  <!-- Bootstrap core JavaScript -->
+ 	<script src="/js/common_scripts.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/common_func.js"></script>
+
+</body>
+
+</html>
