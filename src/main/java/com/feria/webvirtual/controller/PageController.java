@@ -339,19 +339,39 @@ logger.info("getCategories id_tema:"+id_tema+"\n");
 	
 	@GetMapping("/saveOrder")
 	public String saveOrder() {
+		
 		Date fechaCreacion = new Date();
 		orden.setFechacompra(fechaCreacion);
 		orden.setNumero(ordenService.generarNumeroOrden());
 		
 		Tbl_usuarios usuario = usuarioService.findById(1).get();
 		orden.setUsuario(usuario);
+		orden.setNombresolicitante(usuario.getNombre());
+		orden.setInformacionsolicitante(usuario.getDireccion());
+		orden.setAdscripcion(usuario.getDepartamento());
+		
 		ordenService.save(orden);
 		
 		for (DetalleOrden dt:detalles) {
 			dt.setOrden(orden);
-			detalleOrdenService.save(dt);
+			dt.setClave_proveedor(dt.getProveedor().getClave_proveedor());
+			dt.setInfoproveedor(dt.getProveedor().getEditorial());
+			dt.setInfolibro(dt.getProveedor().getUrl());
+			dt.setAutor(dt.getProveedor().getAutor());
+			dt.setTitulo(dt.getProveedor().getTitulo());
+			dt.setAnio(dt.getProveedor().getAnio());
+			dt.setIsbn(dt.getProveedor().getIsbn());
+			if((dt.getProveedor().getTipo_fto_electronico() != 0)) {
+				dt.setFormato("Electronico");
+			} else {
+				dt.setFormato("Fisico");
+			}
 			
+			detalleOrdenService.save(dt);
 		}
+		
+		
+		
 		orden = new OrdenCompra();
 		detalles.clear();
 		

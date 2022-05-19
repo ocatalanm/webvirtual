@@ -1,13 +1,14 @@
 package com.feria.webvirtual.dao.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -23,14 +24,6 @@ public class OrdenCompra {
 	private String nombresolicitante;
 	private String informacionsolicitante;
 	private String adscripcion;
-	private String clave_proveedor;
-	private String infoproveedor;
-	private String infolibro;
-	private String autor;
-	private String titulo;
-	private String anio;
-	private String isbn;
-	private String formato;
 	@Temporal(TemporalType.DATE)
 	private Date fechacompra;
 	private double total;
@@ -39,37 +32,30 @@ public class OrdenCompra {
 	@ManyToOne
 	private Tbl_usuarios usuario;
 	
-	@OneToOne(mappedBy = "ordenCompra")
-	private DetalleOrden detalleOrden;
+	@OneToMany(mappedBy="ordenCompra")
+	private List<DetalleOrden> detalleOrden;
+	
+	//@OneToOne(mappedBy = "ordenCompra")
+	//private DetalleOrden detalleOrden;
 	
 	public OrdenCompra() {
 		
 	}
 
 	public OrdenCompra(Integer id, String nombresolicitante, String informacionsolicitante, String adscripcion,
-			String clave_proveedor, String infoproveedor, String infolibro, String autor, String titulo, String anio,
-			String isbn, String formato, Date fechacompra, double total, String numero, Tbl_usuarios usuario,
-			DetalleOrden detalleOrden) {
+			Date fechacompra, double total, String numero, Tbl_usuarios usuario, List<DetalleOrden> detalleOrden) {
 		super();
 		this.id = id;
 		this.nombresolicitante = nombresolicitante;
 		this.informacionsolicitante = informacionsolicitante;
 		this.adscripcion = adscripcion;
-		this.clave_proveedor = clave_proveedor;
-		this.infoproveedor = infoproveedor;
-		this.infolibro = infolibro;
-		this.autor = autor;
-		this.titulo = titulo;
-		this.anio = anio;
-		this.isbn = isbn;
-		this.formato = formato;
 		this.fechacompra = fechacompra;
 		this.total = total;
 		this.numero = numero;
 		this.usuario = usuario;
 		this.detalleOrden = detalleOrden;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -102,70 +88,6 @@ public class OrdenCompra {
 		this.adscripcion = adscripcion;
 	}
 
-	public String getClave_proveedor() {
-		return clave_proveedor;
-	}
-
-	public void setClave_proveedor(String clave_proveedor) {
-		this.clave_proveedor = clave_proveedor;
-	}
-
-	public String getInfoproveedor() {
-		return infoproveedor;
-	}
-
-	public void setInfoproveedor(String infoproveedor) {
-		this.infoproveedor = infoproveedor;
-	}
-
-	public String getInfolibro() {
-		return infolibro;
-	}
-
-	public void setInfolibro(String infolibro) {
-		this.infolibro = infolibro;
-	}
-
-	public String getAutor() {
-		return autor;
-	}
-
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getAnio() {
-		return anio;
-	}
-
-	public void setAnio(String anio) {
-		this.anio = anio;
-	}
-
-	public String getIsbn() {
-		return isbn;
-	}
-
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
-	public String getFormato() {
-		return formato;
-	}
-
-	public void setFormato(String formato) {
-		this.formato = formato;
-	}
-
 	public Date getFechacompra() {
 		return fechacompra;
 	}
@@ -174,11 +96,11 @@ public class OrdenCompra {
 		this.fechacompra = fechacompra;
 	}
 
-	public DetalleOrden getDetalleOrden() {
+	public List<DetalleOrden> getDetalleOrden() {
 		return detalleOrden;
 	}
 
-	public void setDetalleOrden(DetalleOrden detalleOrden) {
+	public void setDetalleOrden(List<DetalleOrden> detalleOrden) {
 		this.detalleOrden = detalleOrden;
 	}
 
@@ -208,12 +130,9 @@ public class OrdenCompra {
 
 	@Override
 	public String toString() {
-		return "OrdenCompra [id=" + id + ", nombresolicitante=" + nombresolicitante
-				+ ", informacionsolicitante=" + informacionsolicitante + ", adscripcion=" + adscripcion
-				+ ", clave_proveedor=" + clave_proveedor + ", infoproveedor=" + infoproveedor + ", infolibro=" + infolibro
-				+ ", autor=" + autor + ", titulo=" + titulo + ", anio=" + anio + ", isbn=" + isbn + ", formato="
-				+ formato + ", fechaCompra=" + fechacompra + ", total=" + total + ", numero=" + numero + ", usuario="
-				+ usuario + ", detalleOrden=" + detalleOrden + "]";
+		return "OrdenCompra [id=" + id + ", nombresolicitante=" + nombresolicitante + ", informacionsolicitante="
+				+ informacionsolicitante + ", adscripcion=" + adscripcion + ", fechacompra=" + fechacompra + ", total="
+				+ total + ", numero=" + numero + ", usuario=" + usuario + ", detalleOrden=" + detalleOrden + "]";
 	}
 	
 }

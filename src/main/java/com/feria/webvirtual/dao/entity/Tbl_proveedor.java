@@ -28,7 +28,7 @@ public class Tbl_proveedor {
 	private String tema_1;
 	private String tema_2;
 	private String tema_3;
-	private int precio_dolares;
+	private double precio_dolares;
 	private Integer tipo_fto_electronico;
 	private Integer tipo_fto_fisico;
 	private String clave_proveedor;
@@ -94,13 +94,12 @@ public class Tbl_proveedor {
 	public void setTema_3(String tema_3) {
 		this.tema_3 = tema_3;
 	}
-	public int getPrecio_dolares() {
+	public double getPrecio_dolares() {
 		return precio_dolares;
 	}
-	public void setPrecio_dolares(int precio_dolares) {
+	public void setPrecio_dolares(double precio_dolares) {
 		this.precio_dolares = precio_dolares;
 	}
-	
 	
 	public String getClave_proveedor() {
 		return clave_proveedor;
@@ -140,14 +139,4 @@ public class Tbl_proveedor {
 				+ ", precio_dolares=" + precio_dolares + ", tipo_fto_electronico=" + tipo_fto_electronico
 				+ ", tipo_fto_fisico=" + tipo_fto_fisico + ", clave_proveedor=" + clave_proveedor + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-    
-	
-	
 }
